@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+ 
+ <title>Absen hidup</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .box {
+      background: white;
+      width: 300px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    ul {
+      text-align: left;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h2>ABSEN MEMBER LIONDEZ</h2>
+
+    <input type="text" id="nama" placeholder="Masukkan nama">
+    <br>
+
+    <button onclick="absen()">Absen</button>
+
+    <ul id="listAbsen"></ul>
+  </div>
+
+  <script>
+    function absen() {
+      let nama = document.getElementById("nama").value;
+
+      if (nama === "") {
+        alert("Nama belum diisi!");
+      } else {
+        let li = document.createElement("li");
+        li.textContent = nama + " hadir";
+        
+        document.getElementById("listAbsen").appendChild(li);
+
+        document.getElementById("nama").value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
